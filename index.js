@@ -24,6 +24,12 @@ app.get('/hello', (req, res) => {
   res.json({ message: 'hey there fren!'});
 })
 
+app.get('/', (req, res) => {
+  res.send(`
+    <h1>Web 49 Rocks!</h1>
+  `)
+})
+
 const port = process.env.PORT || 9000; // heroku wants to set its own port and will not let use coerce the port to be 9000, we must use whatever port it is using (check the env of heroku)
 
 app.listen(9000, () => {
